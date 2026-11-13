@@ -79,6 +79,14 @@ content:
       - { name: eyebrow, label: Season, type: string, description: "The small all-caps season line above the heading (Spring 2027). Also shows at the top of the registration card and in the Register menu." }
       - { name: heading, label: Heading, type: string, description: "The big heading for this sport section." }
       - { name: intro, label: Intro, type: text, description: "The paragraph under the heading." }
+      - { name: logo, label: Sport logo, type: image, description: "Optional white logo above the small season line at the top of this section. Leave blank to hide it." }
+      - { name: photo, label: Wide photo, type: image, description: "Optional wide, slightly tilted photo under the section intro. Use a landscape photo under 500 KB. Leave blank to hide it." }
+      - { name: photoAlt, label: Photo description, type: string, description: "Not shown on the page. Describes the wide photo for screen readers." }
+      - name: photoCrop
+        label: Photo focus
+        type: select
+        description: "Which part of the wide photo stays in view when it's cropped."
+        options: { values: [Top, Upper third, Center, Lower third, Bottom] }
       - { name: registerUrl, label: Registration link, type: string, description: "Not shown as text. Where every Register button for this sport goes (the Upward registration page)." }
       - { name: volunteerUrl, label: Volunteer link, type: string, description: "Not shown as text. Where the Volunteer button for this sport goes, in the Get Involved section." }
       - name: who

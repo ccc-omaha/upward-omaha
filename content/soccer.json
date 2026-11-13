@@ -2,17 +2,42 @@
   "eyebrow": "Spring 2027",
   "heading": "Upward Soccer",
   "intro": "A fun, low-pressure season where every player feels valued, gets real playing time, and grows on and off the field.",
+  "logo": "",
+  "photo": "",
+  "photoAlt": "",
+  "photoCrop": "Center",
   "registerUrl": "https://registration.upward.org/UPW90008",
   "volunteerUrl": "https://registration.upward.org/UPW90008/volunteer",
   "who": [
-    { "title": "Boys and girls, age 5 through 12th grade", "text": "Players must turn 5 by March 15, 2027. Depending on registration numbers, we offer boys divisions, girls divisions, and co-ed high school divisions." },
-    { "title": "Placed by age", "text": "Teams are set by age using a July 31 cutoff. Use the [age group finder](#ages) to see your child's division." },
-    { "title": "All skill levels", "text": "Brand new to soccer, years of experience, or ready to enjoy the game again after burning out. Everyone is welcome here." }
+    {
+      "title": "Boys and girls, age 5 through 12th grade",
+      "text": "Players must turn 5 by March 15, 2027. Depending on registration numbers, we offer boys divisions, girls divisions, and co-ed high school divisions."
+    },
+    {
+      "title": "Placed by age",
+      "text": "Teams are set by age using a July 31 cutoff. Use the [age group finder](#ages) to see your child's division."
+    },
+    {
+      "title": "All skill levels",
+      "text": "Brand new to soccer, years of experience, or ready to enjoy the game again after burning out. Everyone is welcome here."
+    }
   ],
   "schedule": [
-    { "icon": "whistle", "title": "Practice", "text": "One 60-minute evening practice a week on Monday, Tuesday, or Thursday." },
-    { "icon": "star", "title": "Kindergarten (U6)", "text": "No weeknight practice. Instead, a 15-minute mini practice right before each Saturday game." },
-    { "icon": "ball", "title": "Games", "text": "One game every Saturday, morning or afternoon depending on division." }
+    {
+      "icon": "whistle",
+      "title": "Practice",
+      "text": "One 60-minute evening practice a week on Monday, Tuesday, or Thursday."
+    },
+    {
+      "icon": "star",
+      "title": "Kindergarten (U6)",
+      "text": "No weeknight practice. Instead, a 15-minute mini practice right before each Saturday game."
+    },
+    {
+      "icon": "ball",
+      "title": "Games",
+      "text": "One game every Saturday, morning or afternoon depending on division."
+    }
   ],
   "price": "130",
   "priceNote": "per player. Sibling discount available.",
@@ -20,15 +45,50 @@
   "registrationCloses": "",
   "lateFee": "",
   "registrationNotes": "Registration is complete once full payment is received. Register your child in the grade they're in right now.",
-  "kit": ["Reversible jersey", "Shorts (no pockets)", "Socks", "Age-appropriate soccer ball"],
+  "kit": [
+    "Reversible jersey",
+    "Shorts (no pockets)",
+    "Socks",
+    "Age-appropriate soccer ball"
+  ],
   "bring": "Shin guards (required for all ages) and cleats (optional for kindergarten).",
   "dates": [
-    { "label": "Registration deadline", "date": "", "place": "", "note": "" },
-    { "label": "Team placements sent", "date": "", "place": "", "note": "Team, coach, practice night, and season schedule arrive by text and email." },
-    { "label": "Indoor practice and training", "date": "", "place": "Omaha Sports Complex", "note": "Times based on division." },
-    { "label": "Indoor games", "date": "", "place": "Omaha Sports Complex", "note": "Times based on division." },
-    { "label": "First week of practices", "date": "", "place": "CCC Sports Fields", "note": "Weather permitting. Watch for your team's night and time." },
-    { "label": "Outdoor games", "date": "", "place": "CCC Sports Fields", "note": "Saturdays. No games on Easter weekend." }
+    {
+      "label": "Registration deadline",
+      "date": "",
+      "place": "",
+      "note": ""
+    },
+    {
+      "label": "Team placements sent",
+      "date": "",
+      "place": "",
+      "note": "Team, coach, practice night, and season schedule arrive by text and email."
+    },
+    {
+      "label": "Indoor practice and training",
+      "date": "",
+      "place": "Omaha Sports Complex",
+      "note": "Times based on division."
+    },
+    {
+      "label": "Indoor games",
+      "date": "",
+      "place": "Omaha Sports Complex",
+      "note": "Times based on division."
+    },
+    {
+      "label": "First week of practices",
+      "date": "",
+      "place": "CCC Sports Fields",
+      "note": "Weather permitting. Watch for your team's night and time."
+    },
+    {
+      "label": "Outdoor games",
+      "date": "",
+      "place": "CCC Sports Fields",
+      "note": "Saturdays. No games on Easter weekend."
+    }
   ],
   "datesNote": "There are no makeup games during the season."
 }

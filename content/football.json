@@ -2,18 +2,47 @@
   "eyebrow": "Fall 2027",
   "heading": "Upward Flag Football & Cheer",
   "intro": "Saturday mornings under the fall sky, with every player in the action and every cheerleader part of the full game-day experience.",
+  "logo": "images/football-logo.png",
+  "photo": "images/action-2.jpg",
+  "photoAlt": "Three Upward flag football players flexing with their backs to the camera, showing jerseys 13, 25, and 23",
+  "photoCrop": "Lower third",
   "registerUrl": "https://registration.upward.org/UPW90431",
   "volunteerUrl": "https://registration.upward.org/UPW90431/volunteer",
   "who": [
-    { "title": "Flag football: kindergarten through high school", "text": "Boys and girls who turn 5 by July 31, 2027. Divisions are co-ed." },
-    { "title": "Cheer: kindergarten through 8th grade", "text": "Girls who turn 5 by July 31, 2027. Teams are organized by grade, and some teams may combine grades depending on registration." },
-    { "title": "Register by fall grade", "text": "Sign up in the grade your child is **going into** in fall 2027. All skill levels are welcome." }
+    {
+      "title": "Flag football: kindergarten through high school",
+      "text": "Boys and girls who turn 5 by July 31, 2027. Divisions are co-ed."
+    },
+    {
+      "title": "Cheer: kindergarten through 8th grade",
+      "text": "Girls who turn 5 by July 31, 2027. Teams are organized by grade, and some teams may combine grades depending on registration."
+    },
+    {
+      "title": "Register by fall grade",
+      "text": "Sign up in the grade your child is **going into** in fall 2027. All skill levels are welcome."
+    }
   ],
   "schedule": [
-    { "icon": "football", "title": "Flag football practice", "text": "One 60-minute evening practice a week on Monday, Tuesday, or Thursday." },
-    { "icon": "star", "title": "Kindergarten and 1st grade flag", "text": "No weeknight practice. Instead, a mini practice right before each Saturday game." },
-    { "icon": "pom", "title": "Cheer practice", "text": "One 60-minute practice a week. Monday nights for 2nd through 8th grade, Thursday nights for kindergarten and 1st grade." },
-    { "icon": "calendar", "title": "Games", "text": "One game every Saturday, morning or early afternoon depending on division." }
+    {
+      "icon": "football",
+      "title": "Flag football practice",
+      "text": "One 60-minute evening practice a week on Monday, Tuesday, or Thursday."
+    },
+    {
+      "icon": "star",
+      "title": "Kindergarten and 1st grade flag",
+      "text": "No weeknight practice. Instead, a mini practice right before each Saturday game."
+    },
+    {
+      "icon": "pom",
+      "title": "Cheer practice",
+      "text": "One 60-minute practice a week. Monday nights for 2nd through 8th grade, Thursday nights for kindergarten and 1st grade."
+    },
+    {
+      "icon": "calendar",
+      "title": "Games",
+      "text": "One game every Saturday, morning or early afternoon depending on division."
+    }
   ],
   "price": "130",
   "priceNote": "per player. Sibling discount available.",
@@ -22,16 +51,66 @@
   "lateFee": "150",
   "registrationNotes": "Registration is complete once full payment is received. Spots are limited and divisions may fill before the deadline.",
   "kits": [
-    { "title": "Flag football kit", "items": ["Reversible jersey", "Shorts (no pockets)", "Flag belt and flags", "Age and size-appropriate football", "Player wristband (older divisions)"], "bring": "Mouth guard (required for all ages) and football cleats (optional for kindergarten and 1st grade)." },
-    { "title": "Cheer kit", "items": ["Cheer top", "Cheer skort", "Mock turtleneck", "Hair bow", "Poms"], "bring": "Tennis shoes." }
+    {
+      "title": "Flag football kit",
+      "items": [
+        "Reversible jersey",
+        "Shorts (no pockets)",
+        "Flag belt and flags",
+        "Age and size-appropriate football",
+        "Player wristband (older divisions)"
+      ],
+      "bring": "Mouth guard (required for all ages) and football cleats (optional for kindergarten and 1st grade)."
+    },
+    {
+      "title": "Cheer kit",
+      "items": [
+        "Cheer top",
+        "Cheer skort",
+        "Mock turtleneck",
+        "Hair bow",
+        "Poms"
+      ],
+      "bring": "Tennis shoes."
+    }
   ],
   "dates": [
-    { "label": "Registration deadline", "date": "", "place": "", "note": "Late fee applies after this date." },
-    { "label": "Team placements sent", "date": "", "place": "", "note": "Team, coach, practice night, and season schedule arrive by text and email." },
-    { "label": "First practices: flag football, 2nd to 12th grade", "date": "", "place": "CCC Sports Fields", "note": "Weather permitting. Watch for your team's night and time." },
-    { "label": "First practice: flag football, kindergarten and 1st", "date": "", "place": "CCC Sports Fields", "note": "Saturday morning, 9 to 10 AM." },
-    { "label": "First practices: cheer", "date": "", "place": "Christ Community Church", "note": "Times based on team." },
-    { "label": "Outdoor games", "date": "", "place": "CCC Sports Fields", "note": "Saturdays. No games on Labor Day weekend." }
+    {
+      "label": "Registration deadline",
+      "date": "",
+      "place": "",
+      "note": "Late fee applies after this date."
+    },
+    {
+      "label": "Team placements sent",
+      "date": "",
+      "place": "",
+      "note": "Team, coach, practice night, and season schedule arrive by text and email."
+    },
+    {
+      "label": "First practices: flag football, 2nd to 12th grade",
+      "date": "",
+      "place": "CCC Sports Fields",
+      "note": "Weather permitting. Watch for your team's night and time."
+    },
+    {
+      "label": "First practice: flag football, kindergarten and 1st",
+      "date": "",
+      "place": "CCC Sports Fields",
+      "note": "Saturday morning, 9 to 10 AM."
+    },
+    {
+      "label": "First practices: cheer",
+      "date": "",
+      "place": "Christ Community Church",
+      "note": "Times based on team."
+    },
+    {
+      "label": "Outdoor games",
+      "date": "",
+      "place": "CCC Sports Fields",
+      "note": "Saturdays. No games on Labor Day weekend."
+    }
   ],
   "datesNote": "There are no makeup games during the season."
 }

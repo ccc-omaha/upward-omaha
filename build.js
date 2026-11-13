@@ -50,6 +50,7 @@ const garmentSvg = g => {
   const arrows = (ARROWS[g] || []).map(([x1, x2, y, label]) => `<g class="g-arrow"><path d="M${x1 + 6} ${y} L${x2 - 6} ${y}"/><path d="M${x1 + 12} ${y - 5} L${x1 + 5} ${y} L${x1 + 12} ${y + 5} M${x2 - 12} ${y - 5} L${x2 - 5} ${y} L${x2 - 12} ${y + 5}"/><rect x="${(x1 + x2) / 2 - 24}" y="${y - 9}" width="48" height="18" rx="9"/><text x="${(x1 + x2) / 2}" y="${y + 4}">${esc(label)}</text></g>`).join('');
   return `<svg class="garment" viewBox="0 0 200 200" aria-hidden="true">${GARMENTS[g] || GARMENTS['Jersey']}${arrows}</svg>`;
 };
+const CROP = { 'Top': 'center top', 'Upper third': 'center 30%', 'Center': 'center', 'Lower third': 'center 70%', 'Bottom': 'center bottom' };
 const COLORS = { Blue: 'blue', Orange: 'orange', Magenta: 'magenta', Purple: 'purple', Navy: 'navy' };
 
 // ---------- sections ----------
@@ -123,13 +124,15 @@ const sportSection = (x, id, sport, art) => `
   <section class="sport ${sport}" id="${id}" aria-labelledby="${id}-h">
     <div class="wrap">
       <div class="sport-top">
-        <div>
+        <div>${x.logo ? `
+          <img class="sport-logo" src="${img(x.logo)}" alt="" width="189" height="52">` : ''}
           <p class="eyebrow">${txt(x.eyebrow)}</p>
           <h2 id="${id}-h">${txt(x.heading)}</h2>
           <p class="sport-intro">${fmt(x.intro)}</p>
         </div>
         <div class="sport-art" aria-hidden="true">${art}</div>
-      </div>
+      </div>${x.photo ? `
+      <figure class="sport-photo reveal" style="--pos:${esc(CROP[x.photoCrop] || 'center')}"><img src="${img(x.photo)}" alt="${esc(x.photoAlt)}" width="1800" height="1202" loading="lazy"></figure>` : ''}
       <div class="sport-grid">
         <div class="sport-main">
           <h3 class="sub">${icon('people')}Who can play</h3>
