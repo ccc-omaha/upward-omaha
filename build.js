@@ -79,7 +79,7 @@ const hero = `
       <div class="hero-photo">
         <div class="photo-frame"><img src="${img(h.photo)}" alt="${esc(h.photoAlt)}" width="900" height="700" fetchpriority="high"></div>
         <div class="hero-ball" aria-hidden="true">${icon('soccer-ball', 'ball-svg')}</div>
-        <div class="hero-sticker" aria-hidden="true">${icon('whistle')}<span>Everyone<br>plays</span></div>
+        <div class="hero-sticker" aria-hidden="true"><svg class="whistle"><use href="#i-whistle-solid"/></svg><span>Everyone<br>plays</span></div>
       </div>
     </div>
   </section>`;
