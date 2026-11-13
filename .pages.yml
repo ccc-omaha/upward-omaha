@@ -301,5 +301,6 @@ content:
     fields:
       - { name: title, label: Page title, type: string, description: "Not shown on the page. The title in the browser tab, Google results, and link previews." }
       - { name: description, label: Description, type: text, description: "Not shown on the page. The summary in Google results and link previews." }
-      - { name: shareImage, label: Share image, type: image, description: "Not shown on the page. The picture in link previews on texts and social media." }
+      - { name: shareImage, label: Share image, type: image, description: "Not shown on the page. The picture in link previews on texts and social media. Use 1200 x 630 pixels." }
+      - { name: shareImageAlt, label: Share image description, type: string, description: "Not shown on the page. Describes the share image for screen readers and social sites." }
       - { name: footer, label: Footer line, type: string, description: "The text after © year Upward Sports Omaha, at the very bottom of the page." }

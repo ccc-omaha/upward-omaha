@@ -18,6 +18,13 @@ const fmt = s => tie(esc(s)
 const txt = s => tie(esc(s));
 const img = p => '/' + esc(String(p || '').replace(/^\//, ''));
 const ext = u => /^https?:/.test(u) ? ' target="_blank" rel="noopener"' : '';
+// serve WebP (with a smaller copy for phones) when it exists next to the photo
+const pic = (p, alt, w, h, attrs, sizes) => {
+  const base = String(p || '').replace(/^\//, '').replace(/\.(jpe?g|png)$/i, '');
+  const has = f => fs.existsSync(path.join(ROOT, f));
+  const set = [has(base + '-900.webp') && `/${esc(base)}-900.webp 900w`, has(base + '.webp') && `/${esc(base)}.webp 1800w`].filter(Boolean).join(', ');
+  return `<picture>${set ? `<source type="image/webp" srcset="${set}" sizes="${sizes}">` : ''}<img src="${img(p)}" alt="${esc(alt)}" width="${w}" height="${h}"${attrs}></picture>`;
+};
 const mapLink = a => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(a);
 const telLink = p => 'tel:+1' + String(p).replace(/\D/g, '').replace(/^1/, '');
 const smsLink = p => 'sms:+1' + String(p).replace(/\D/g, '').replace(/^1/, '');
@@ -77,7 +84,7 @@ const hero = `
         </div>
       </div>
       <div class="hero-photo">
-        <div class="photo-frame"><img src="${img(h.photo)}" alt="${esc(h.photoAlt)}" width="900" height="700" fetchpriority="high"></div>
+        <div class="photo-frame">${pic(h.photo, h.photoAlt, 900, 700, ' fetchpriority="high"', '(max-width:1020px) 92vw, 470px')}</div>
         <div class="hero-ball" aria-hidden="true">${icon('soccer-ball', 'ball-svg')}</div>
         <div class="hero-sticker" aria-hidden="true"><svg class="whistle"><use href="#i-whistle"/></svg><span>Everyone<br>plays</span></div>
       </div>
@@ -132,7 +139,7 @@ const sportSection = (x, id, sport, art) => `
         </div>
         <div class="sport-art" aria-hidden="true">${art}</div>
       </div>${x.photo ? `
-      <figure class="sport-photo reveal" style="--pos:${esc(CROP[x.photoCrop] || 'center')}"><img src="${img(x.photo)}" alt="${esc(x.photoAlt)}" width="1800" height="1202" loading="lazy"></figure>` : ''}
+      <figure class="sport-photo reveal" style="--pos:${esc(CROP[x.photoCrop] || 'center')}">${pic(x.photo, x.photoAlt, 1800, 1202, ' loading="lazy" decoding="async"', '(max-width:1240px) 94vw, 1180px')}</figure>` : ''}
       <div class="sport-grid">
         <div class="sport-main">
           <h3 class="sub">${icon('people')}Who can play</h3>
@@ -279,9 +286,37 @@ ${ct.locations.map(l => `        <li><span class="why-icon">${icon('pin')}</span
 
 const content = [hero, why, sportSection(c.soccer, 'soccer', 'soccer', soccerArt), sportSection(c.football, 'football', 'football', footballArt), sizing, ages, teams, volunteer, contact].join('\n');
 
+const plain = t => String(t || '').replace(/\*\*(.+?)\*\*/g, '$1').replace(/\*(.+?)\*/g, '$1').replace(/\[(.+?)\]\([^)]*\)/g, '$1');
+const SITE = 'https://upwardomaha.com';
+const ccc = ct.locations[0];
+const addr = a => { const m = String(a).match(/^(.*?),\s*(.*?),\s*([A-Z]{2})\s+(\d{5})/); return m ? { '@type': 'PostalAddress', streetAddress: m[1], addressLocality: m[2], addressRegion: m[3], postalCode: m[4], addressCountry: 'US' } : a; };
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'SportsOrganization', '@id': SITE + '/#org', name: 'Upward Sports Omaha', url: SITE + '/',
+      description: c.seo.description, logo: SITE + '/images/upward-logo.png', image: SITE + img(c.seo.shareImage),
+      email: ct.email, telephone: '+1-' + String(ct.phone).replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3'),
+      sport: ['Soccer', 'Flag football', 'Cheerleading'], areaServed: { '@type': 'City', name: 'Omaha, Nebraska' },
+      address: addr(ccc.address),
+      parentOrganization: { '@type': 'Church', name: 'Christ Community Church', url: 'https://cccomaha.org/' },
+      location: ct.locations.map(l => ({ '@type': 'SportsActivityLocation', name: l.name, address: addr(l.address) }))
+    },
+    { '@type': 'WebSite', '@id': SITE + '/#site', url: SITE + '/', name: 'Upward Sports Omaha', publisher: { '@id': SITE + '/#org' }, inLanguage: 'en-US' },
+    {
+      '@type': 'FAQPage', '@id': SITE + '/#faq',
+      mainEntity: t.questions.map(q => ({ '@type': 'Question', name: plain(q.question), acceptedAnswer: { '@type': 'Answer', text: plain(q.answer) } }))
+    }
+  ]
+};
+const today = new Date().toISOString().slice(0, 10);
+fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${SITE}/</loc><lastmod>${today}</lastmod></url>\n</urlset>\n`);
+fs.writeFileSync(path.join(ROOT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
+
 let out = fs.readFileSync(path.join(ROOT, 'src', 'template.html'), 'utf8');
 const vars = {
-  TITLE: esc(c.seo.title), DESC: esc(c.seo.description), OG_IMAGE: 'https://upwardomaha.com' + img(c.seo.shareImage),
+  TITLE: esc(c.seo.title), DESC: esc(c.seo.description), OG_IMAGE: SITE + img(c.seo.shareImage), OG_ALT: esc(c.seo.shareImageAlt || c.seo.title),
+  JSONLD: JSON.stringify(jsonld).replace(/</g, '\\u003c'),
   CONTENT: content, FOOTER: fmt(c.seo.footer), YEAR: String(new Date().getFullYear()),
   EMAIL: esc(ct.email), PHONE: esc(ct.phone), SMS: smsLink(ct.phone),
   SOCCER_REG: esc(c.soccer.registerUrl), FOOTBALL_REG: esc(c.football.registerUrl),
