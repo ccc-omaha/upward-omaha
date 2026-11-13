@@ -108,11 +108,11 @@ h4{font-size:18px;font-weight:800;line-height:1.25}
 .sport-card:hover .sc-go{transform:translateX(4px);opacity:1}
 .hero-photo{position:relative}
 .photo-frame{border-radius:28px;overflow:hidden;transform:rotate(2.5deg);box-shadow:0 30px 60px rgba(0,0,0,.4);border:6px solid #fff;background:#223}
-.photo-frame img{width:100%;height:auto;aspect-ratio:9/8;object-fit:cover;object-position:center 30%}
+.photo-frame img{width:100%;height:700px;object-fit:cover}
 .hero-ball{position:absolute;left:-46px;bottom:-34px;width:110px;height:110px;animation:drop 1.4s cubic-bezier(.3,0,.3,1) both .3s}
 .ball-svg{width:100%;height:100%;animation:spin 14s linear infinite 1.7s;filter:drop-shadow(0 10px 14px rgba(0,0,0,.35))}
 .hero-sticker{position:absolute;right:-18px;top:-26px;background:var(--orange);color:var(--navy);border-radius:50%;width:132px;height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;font-weight:900;font-style:italic;text-transform:uppercase;font-size:16px;line-height:.95;transform:rotate(-10deg);box-shadow:0 10px 24px rgba(0,0,0,.3);animation:pop .6s cubic-bezier(.3,1.6,.5,1) both 1s}
-.hero-sticker .whistle{width:62px;height:44px;animation:toot 3.2s ease-in-out infinite 2s;transform-origin:70% 60%}
+.hero-sticker .whistle{width:50px;height:50px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;animation:toot 3.2s ease-in-out infinite 2s;transform-origin:70% 60%}
 @keyframes toot{0%,80%,100%{transform:none}84%{transform:rotate(-12deg) scale(1.08)}88%{transform:rotate(8deg) scale(1.08)}92%{transform:rotate(-6deg)}}
 
 /* why */
@@ -348,6 +348,7 @@ footer{background:#000026;color:rgba(255,255,255,.7);padding:36px 0;font-size:15
   .nav.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--navy);padding:12px 20px 20px;border-bottom:1px solid rgba(255,255,255,.1)}
   .hero-grid,.sport-top,.sport-grid,.ages-grid,.teams-grid,.contact-grid{grid-template-columns:1fr}
   .hero-photo{max-width:520px;margin:20px auto 0;width:calc(100% - 40px)}
+  .photo-frame img{height:auto;aspect-ratio:4/3}
   .sport-side{position:static;margin-top:8px}
   .sport-art{max-width:460px}
   .why-grid,.roles{grid-template-columns:repeat(2,1fr)}
@@ -364,13 +365,13 @@ footer{background:#000026;color:rgba(255,255,255,.7);padding:36px 0;font-size:15
   .reg-menu summary{padding:10px 14px;font-size:15px}
   .reg-pop{position:fixed;left:12px;right:12px;top:80px;min-width:0}
   .hero{padding:44px 0 72px}
-  .photo-frame img{aspect-ratio:3/2}
+  .photo-frame img{height:auto;aspect-ratio:3/2;object-position:center 30%}
   .sport-photo{margin-top:32px}
   .sport-cards{grid-template-columns:1fr}
   .why-grid,.roles,.timeline{grid-template-columns:1fr}
   .hero-ball{width:80px;height:80px;left:-24px}
   .hero-sticker{width:104px;height:104px;font-size:13px;right:-8px;top:-20px}
-  .hero-sticker .whistle{width:46px;height:33px}
+  .hero-sticker .whistle{width:38px;height:38px}
   .why,.sport,.sizing,.teams,.volunteer,.ages,.contact{padding:72px 0}
   .bigquote{padding:28px}
   .af-row{flex-direction:column}
