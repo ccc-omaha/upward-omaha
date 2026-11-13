@@ -1,0 +1,24 @@
+{
+  "eyebrow": "Get involved",
+  "heading": "It takes a team",
+  "text": "Upward runs on volunteers. Give an hour a week, every other week, or whenever you can.",
+  "roles": [
+    { "icon": "clipboard", "title": "Coach", "text": "Love Jesus and want to make a difference in kids' lives? You don't need coaching experience, just a willingness to lead. We'll train and equip you. It's one practice and one game a week." },
+    { "icon": "whistle", "title": "Referee (paid and volunteer)", "text": "We pay our referees, and we train them too. Open to adults, college students, and high schoolers. Experience in the sport helps but isn't required. Hours count toward National Honor Society and school service requirements." },
+    { "icon": "megaphone", "title": "Game day team", "text": "Set up and break down fields, help MC, and make Saturdays feel like a big deal." },
+    { "icon": "mower", "title": "Mowing and field care", "text": "Free during the week? Help mow and maintain the CCC sports fields." },
+    { "icon": "mail", "title": "Communications and admin", "text": "Help with parent communication, scheduling, and behind-the-scenes organization." },
+    { "icon": "truck", "title": "Food trucks", "text": "Run a food or refreshment truck? Game days draw big crowds that love supporting local businesses. We can't guarantee sales, but we'd love to have you." }
+  ],
+  "quote": "A coach will impact more people in one year than the average person will in an entire lifetime.",
+  "quoteBy": "Billy Graham",
+  "trainingsHeading": "Coach and referee trainings",
+  "trainings": [
+    { "sport": "Soccer", "title": "Soccer coach training", "date": "", "time": "6:00 to 7:30 PM", "place": "Christ Community Church" },
+    { "sport": "Soccer", "title": "Soccer referee training", "date": "", "time": "", "place": "Omaha Sports Complex" },
+    { "sport": "Football", "title": "Flag football coach meeting and training", "date": "", "time": "6:00 to 7:30 PM", "place": "Christ Community Church" },
+    { "sport": "Cheer", "title": "Cheer coach meeting and training", "date": "", "time": "", "place": "Christ Community Church" },
+    { "sport": "Football", "title": "Flag football referee training", "date": "", "time": "Saturday morning", "place": "CCC Sports Fields" }
+  ],
+  "trainingsNote": "Can't make a training? Sign up anyway. We'll make sure you're set up and supported."
+}

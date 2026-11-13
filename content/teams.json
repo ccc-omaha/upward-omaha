@@ -1,0 +1,13 @@
+{
+  "eyebrow": "Teams and requests",
+  "heading": "How we build balanced teams",
+  "text": "During registration, you'll answer a few questions about your child's skill level. Answer as objectively as you can, based on how your child would play in a recreational league, not a club or travel team. It's how we keep teams even and games fun. No system is perfect, and some teams will still win more than others.",
+  "questions": [
+    { "question": "Can my child play with a friend?", "answer": "We'll do our best to honor **one** friend request per child. Make sure both families submit the same request. Requests can't be honored when the kids are in different divisions, when a division has separate boys and girls teams and the kids are different genders, or when they chose different practice nights. Multiple friend requests for the same child or team aren't allowed." },
+    { "question": "Can I avoid a certain practice night?", "answer": "Practice nights are Monday, Tuesday, and Thursday evenings. We'll try to honor one practice-night exclusion per player, but because of the league's size we can't guarantee it. We can't take requests for specific practice times. Siblings may not end up practicing on the same night." },
+    { "question": "What if my friend request and practice night conflict?", "answer": "For **soccer**, the practice-night exclusion wins. For **flag football**, the friend request wins." },
+    { "question": "Why is my child in a different division than their friend?", "answer": "Soccer is organized by **age**, using a July 31 birthday cutoff, not by grade. An 8-year-old in U9 and a friend who just turned 9 in U11 will land in different divisions. Flag football and cheer are organized by the grade your child is going into, and registration numbers decide how divisions are grouped." },
+    { "question": "When will I hear about my child's team?", "answer": "The Upward leadership team sends team placement, practice night and time, team name, coach, and season schedule by text and email before the season starts. See the key dates for each sport." },
+    { "question": "Can my child switch teams after placement?", "answer": "No. Once a player is placed on a team, the size of the league means we can't move players to different teams." }
+  ]
+}

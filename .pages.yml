@@ -1,0 +1,297 @@
+# Pages CMS configuration for upwardomaha.com
+# Staff edit at https://app.pagescms.org. Saving commits to GitHub,
+# and Netlify rebuilds and republishes the site in about a minute.
+#
+# Text fields accept **bold**, *italic*, and [link text](https://...).
+# Links can also jump to a spot on the page, like [age group finder](#ages).
+# Leave a date blank and the page shows "Date coming soon".
+
+settings:
+  commit:
+    identity: user   # record the staff member's name on each saved change
+
+media:
+  input: images
+  output: /images
+  rename: safe
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  # ---------------------------------------------------------------
+  - name: hero
+    label: "1. Top of page"
+    type: file
+    path: content/hero.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Small label, type: string, description: "The small aqua all-caps line above the big headline." }
+      - { name: heading, label: Headline, type: string, description: "The big headline at the top of the page. If it ends with the word game. that word turns orange." }
+      - { name: text, label: Intro paragraph, type: text, description: "The paragraph under the big headline." }
+      - { name: photo, label: Photo, type: image, description: "The tilted photo on the right of the top section. Use a landscape photo under 500 KB. Also used as the image when the link is shared, unless you change it in Search and sharing." }
+      - { name: photoAlt, label: Photo description, type: string, description: "Not shown on the page. Describes the photo for screen readers." }
+      - name: soccerCard
+        label: Soccer card
+        type: object
+        description: "The blue card under the intro that jumps down to soccer."
+        fields:
+          - { name: label, label: Sport name, type: string, description: "The bold sport name on the blue card." }
+          - { name: season, label: Season, type: string, description: "The small blue season line above the sport name (Spring 2027)." }
+          - { name: text, label: Short line, type: string, description: "The short line at the bottom of the blue card." }
+      - name: footballCard
+        label: Flag football and cheer card
+        type: object
+        description: "The orange card under the intro that jumps down to flag football and cheer."
+        fields:
+          - { name: label, label: Sport name, type: string, description: "The bold sport name on the orange card." }
+          - { name: season, label: Season, type: string, description: "The small orange season line above the sport name (Fall 2027)." }
+          - { name: text, label: Short line, type: string, description: "The short line at the bottom of the orange card." }
+
+  # ---------------------------------------------------------------
+  - name: why
+    label: "2. Why Upward"
+    type: file
+    path: content/why.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Small label, type: string, description: "The small all-caps line above the Why Upward heading." }
+      - { name: heading, label: Heading, type: string, description: "The big heading above the six cards." }
+      - name: items
+        label: Cards
+        type: object
+        list: true
+        description: "The white cards in the Why Upward grid. Six fills the grid evenly."
+        fields:
+          - name: icon
+            label: Icon
+            type: select
+            description: "The small icon in the colored square at the top of the card."
+            options: { values: [whistle, tag, clock, shield, cross, star, ball, football, pom, people, calendar, megaphone] }
+          - { name: title, label: Title, type: string, description: "The bold title on the card." }
+          - { name: text, label: Text, type: text, description: "The short paragraph on the card." }
+
+  # ---------------------------------------------------------------
+  - name: soccer
+    label: "3. Soccer"
+    type: file
+    path: content/soccer.json
+    format: json
+    fields: &sport
+      - { name: eyebrow, label: Season, type: string, description: "The small all-caps season line above the heading (Spring 2027). Also shows at the top of the registration card and in the Register menu." }
+      - { name: heading, label: Heading, type: string, description: "The big heading for this sport section." }
+      - { name: intro, label: Intro, type: text, description: "The paragraph under the heading." }
+      - { name: registerUrl, label: Registration link, type: string, description: "Not shown as text. Where every Register button for this sport goes (the Upward registration page)." }
+      - { name: volunteerUrl, label: Volunteer link, type: string, description: "Not shown as text. Where the Volunteer button for this sport goes, in the Get Involved section." }
+      - name: who
+        label: Who can play
+        type: object
+        list: true
+        description: "The cards with a colored left edge under Who Can Play."
+        fields:
+          - { name: title, label: Title, type: string, description: "The bold first line of the card." }
+          - { name: text, label: Text, type: text, description: "The details under the title." }
+      - name: schedule
+        label: Time commitment
+        type: object
+        list: true
+        description: "The tinted boxes under Time Commitment."
+        fields:
+          - name: icon
+            label: Icon
+            type: select
+            description: "The small icon at the top of the box."
+            options: { values: [whistle, star, ball, football, pom, calendar, clock] }
+          - { name: title, label: Title, type: string, description: "The bold title in the box." }
+          - { name: text, label: Text, type: text, description: "The details under the title." }
+      - { name: price, label: Price, type: string, description: "The big price on the registration card. Numbers only, like 130." }
+      - { name: priceNote, label: Price note, type: string, description: "The small text beside the big price (per player, sibling discount)." }
+      - { name: lateFee, label: Late fee, type: string, description: "Numbers only, like 150. Shows a late registration line under the price. Leave blank to hide it." }
+      - { name: registrationOpens, label: Registration opens, type: string, description: "Shown on the registration card, like December 23, 2026. If both registration dates are blank, the card says the dates are coming soon." }
+      - { name: registrationCloses, label: Registration closes, type: string, description: "Shown on the registration card, like February 1, 2027." }
+      - { name: registrationNotes, label: Registration fine print, type: text, description: "The small text under the Register Now button on the registration card." }
+      - { name: kit, label: Player kit items, type: string, list: true, description: "Soccer only. The checklist in the Player Kit box under What's Included." }
+      - { name: bring, label: Player brings, type: text, description: "Soccer only. The You Bring line at the bottom of the Player Kit box." }
+      - name: kits
+        label: Kits
+        type: object
+        list: true
+        description: "Flag football and cheer only. Each kit is its own dashed box under What's Included."
+        fields:
+          - { name: title, label: Kit name, type: string, description: "The bold name at the top of the box." }
+          - { name: items, label: Items, type: string, list: true, description: "The checklist in the box." }
+          - { name: bring, label: Player brings, type: text, description: "The You Bring line at the bottom of the box." }
+      - name: dates
+        label: Key dates
+        type: object
+        list: true
+        description: "The numbered cards under Key Dates, in order."
+        fields:
+          - { name: label, label: What, type: string, description: "The bold line at the top of the card." }
+          - { name: date, label: Date, type: string, description: "The colored date line, written how you want it to read (Saturday, March 20). Leave blank to show Date coming soon." }
+          - { name: place, label: Location, type: string, description: "The line with the map pin. Leave blank to hide it." }
+          - { name: note, label: Note, type: text, description: "The small gray text at the bottom of the card. Leave blank to hide it." }
+      - { name: datesNote, label: Note under key dates, type: string, description: "The small line with the circle icon under the key date cards." }
+
+  # ---------------------------------------------------------------
+  - name: football
+    label: "4. Flag football and cheer"
+    type: file
+    path: content/football.json
+    format: json
+    fields: *sport
+
+  # ---------------------------------------------------------------
+  - name: sizing
+    label: "5. Uniform sizing"
+    type: file
+    path: content/sizing.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Small label, type: string, description: "The small all-caps line above the sizing heading." }
+      - { name: heading, label: Heading, type: string, description: "The big heading for the sizing section." }
+      - { name: text, label: Intro, type: text, description: "The paragraph under the sizing heading." }
+      - name: groups
+        label: Sports
+        type: object
+        list: true
+        description: "Each sport is a pill button at the top of the sizing section (Soccer and flag football, Cheer)."
+        fields:
+          - { name: name, label: Button text, type: string, description: "The text on the pill button." }
+          - name: color
+            label: Color
+            type: select
+            description: "The color of the button, drawings, and table header for this sport."
+            options: { values: [Blue, Orange, Magenta, Purple, Navy] }
+          - name: charts
+            label: Size charts
+            type: object
+            list: true
+            description: "Each chart is a round button with a little drawing. Tapping it shows that chart."
+            fields:
+              - { name: name, label: Chart name, type: string, description: "The text on the round button and the title above the table." }
+              - name: garment
+                label: Drawing
+                type: select
+                description: "Which drawing shows on the button and beside the table."
+                options: { values: [Jersey, Shorts, Socks, Cheer top, Skort, Sleeveless shell, Mock turtleneck] }
+              - { name: measure, label: What to measure, type: string, description: "Shown under the big drawing after Measure: (Chest, Waist and hip, Shoe size)." }
+              - { name: columns, label: Column headings, type: string, list: true, description: "The headings across the top of the table, left to right." }
+              - name: rows
+                label: Rows
+                type: object
+                list: true
+                description: "One row of the table per size, top to bottom."
+                fields:
+                  - { name: cells, label: Cells, type: string, list: true, description: "The values in this row, left to right, matching the column headings. The first value is the size and shows in bold." }
+      - { name: note, label: Fine print, type: string, description: "The small line under the size charts." }
+
+  # ---------------------------------------------------------------
+  - name: ages
+    label: "6. Soccer age groups"
+    type: file
+    path: content/ages.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Small label, type: string, description: "The small all-caps line above the age group heading, in the blue section." }
+      - { name: heading, label: Heading, type: string, description: "The big heading in the blue age group section." }
+      - { name: text, label: Intro, type: text, description: "The paragraph under the heading in the blue section." }
+      - { name: fallYear, label: Fall year of the season, type: number, description: "Sets the whole age chart and the birthday finder. Use the fall year of the school year, so 2026 for Spring 2027 soccer. The chart and its title update themselves." }
+      - { name: youngest, label: Youngest age group, type: number, description: "The first row of the age chart (4 means 4U)." }
+      - { name: oldest, label: Oldest age group, type: number, description: "The last row of the age chart (19 means 19U)." }
+
+  # ---------------------------------------------------------------
+  - name: teams
+    label: "7. Teams and requests"
+    type: file
+    path: content/teams.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Small label, type: string, description: "The small purple all-caps line above the teams heading." }
+      - { name: heading, label: Heading, type: string, description: "The big heading on the left of the teams section." }
+      - { name: text, label: Intro, type: text, description: "The paragraph under the heading on the left." }
+      - name: questions
+        label: Questions
+        type: object
+        list: true
+        description: "The questions on the right that open when tapped."
+        fields:
+          - { name: question, label: Question, type: string, description: "The bold question people tap." }
+          - { name: answer, label: Answer, type: text, description: "The answer that shows when the question is opened." }
+
+  # ---------------------------------------------------------------
+  - name: volunteer
+    label: "8. Volunteer"
+    type: file
+    path: content/volunteer.json
+    format: json
+    fields:
+      - { name: eyebrow, label: Small label, type: string, description: "The small green all-caps line above the volunteer heading." }
+      - { name: heading, label: Heading, type: string, description: "The big heading for the volunteer section." }
+      - { name: text, label: Intro, type: text, description: "The paragraph under the volunteer heading." }
+      - name: roles
+        label: Volunteer roles
+        type: object
+        list: true
+        description: "The cream cards in the volunteer grid. The volunteer buttons under the cards use the links in the Soccer and Flag football and cheer sections."
+        fields:
+          - name: icon
+            label: Icon
+            type: select
+            description: "The small icon in the colored square on the card."
+            options: { values: [clipboard, whistle, megaphone, mower, mail, truck, people, star] }
+          - { name: title, label: Title, type: string, description: "The bold title on the card." }
+          - { name: text, label: Text, type: text, description: "The paragraph on the card." }
+      - { name: quote, label: Quote, type: text, description: "The large quote in the navy box. Don't add quotation marks, the page adds them." }
+      - { name: quoteBy, label: Quote by, type: string, description: "The name under the quote in the navy box." }
+      - { name: trainingsHeading, label: Trainings heading, type: string, description: "The small all-caps line above the training cards." }
+      - name: trainings
+        label: Trainings
+        type: object
+        list: true
+        description: "The small cards with a colored top edge listing coach and referee trainings."
+        fields:
+          - name: sport
+            label: Sport
+            type: select
+            description: "Sets the card's color and the small label at the top."
+            options: { values: [Soccer, Football, Cheer] }
+          - { name: title, label: Title, type: string, description: "The bold title on the card." }
+          - { name: date, label: Date, type: string, description: "The colored date line (Monday, February 15). Leave blank to show Date coming soon." }
+          - { name: time, label: Time, type: string, description: "Shown after the date, like 6:00 to 7:30 PM. Leave blank to hide it." }
+          - { name: place, label: Location, type: string, description: "The line with the map pin on the card." }
+      - { name: trainingsNote, label: Note under trainings, type: string, description: "The small line under the training cards." }
+
+  # ---------------------------------------------------------------
+  - name: contact
+    label: "9. Quote, contact, and locations"
+    type: file
+    path: content/contact.json
+    format: json
+    fields:
+      - { name: testimonial, label: Family quote, type: text, description: "The large quote in the pink band. Don't add quotation marks, the page adds them." }
+      - { name: testimonialBy, label: Quote by, type: string, description: "The small line under the quote in the pink band." }
+      - { name: eyebrow, label: Small label, type: string, description: "The small aqua all-caps line above the contact heading, in the navy section." }
+      - { name: heading, label: Heading, type: string, description: "The big heading in the navy contact section." }
+      - { name: text, label: Intro, type: text, description: "The paragraph under the contact heading." }
+      - { name: email, label: Email, type: string, description: "The email button in the contact section and the email link in the footer." }
+      - { name: phone, label: Text number, type: string, description: "The Text button in the contact section and the footer. Write it like (402) 819-8664." }
+      - name: locations
+        label: Locations
+        type: object
+        list: true
+        description: "The location cards on the right of the contact section. Each gets a Get Directions link."
+        fields:
+          - { name: name, label: Name, type: string, description: "The bold place name on the card." }
+          - { name: address, label: Address, type: string, description: "The aqua address line. Also used for the Get Directions link." }
+          - { name: note, label: What happens here, type: string, description: "The short line under the address." }
+
+  # ---------------------------------------------------------------
+  - name: seo
+    label: "10. Search and sharing"
+    type: file
+    path: content/seo.json
+    format: json
+    fields:
+      - { name: title, label: Page title, type: string, description: "Not shown on the page. The title in the browser tab, Google results, and link previews." }
+      - { name: description, label: Description, type: text, description: "Not shown on the page. The summary in Google results and link previews." }
+      - { name: shareImage, label: Share image, type: image, description: "Not shown on the page. The picture in link previews on texts and social media." }
+      - { name: footer, label: Footer line, type: string, description: "The text after © year Upward Sports Omaha, at the very bottom of the page." }
