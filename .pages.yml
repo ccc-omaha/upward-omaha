@@ -26,7 +26,7 @@ content:
     fields:
       - { name: eyebrow, label: Small label, type: string, description: "The small aqua all-caps line above the big headline." }
       - { name: heading, label: Headline, type: string, description: "The big headline at the top of the page. If it ends with the word game. that word turns orange." }
-      - { name: text, label: Intro paragraph, type: text, description: "The paragraph under the big headline." }
+      - { name: text, label: Intro paragraph, type: text, description: "The paragraph under the big headline. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - { name: photo, label: Photo, type: image, description: "The tilted photo on the right of the top section. Use a landscape photo under 500 KB. Also used as the image when the link is shared, unless you change it in Search and sharing." }
       - { name: photoAlt, label: Photo description, type: string, description: "Not shown on the page. Describes the photo for screen readers." }
       - name: soccerCard
@@ -67,7 +67,7 @@ content:
             description: "The small icon in the colored square at the top of the card."
             options: { values: [whistle, tag, clock, shield, cross, star, ball, football, pom, people, calendar, megaphone] }
           - { name: title, label: Title, type: string, description: "The bold title on the card." }
-          - { name: text, label: Text, type: text, description: "The short paragraph on the card." }
+          - { name: text, label: Text, type: text, description: "The short paragraph on the card. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
 
   # ---------------------------------------------------------------
   - name: soccer
@@ -78,7 +78,7 @@ content:
     fields: &sport
       - { name: eyebrow, label: Season, type: string, description: "The small all-caps season line above the heading (Spring 2027). Also shows at the top of the registration card and in the Register menu." }
       - { name: heading, label: Heading, type: string, description: "The big heading for this sport section." }
-      - { name: intro, label: Intro, type: text, description: "The paragraph under the heading." }
+      - { name: intro, label: Intro, type: text, description: "The paragraph under the heading. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - { name: logo, label: Sport logo, type: image, description: "Optional white logo above the small season line at the top of this section. Leave blank to hide it." }
       - { name: photo, label: Wide photo, type: image, description: "Optional wide, slightly tilted photo under the section intro. Use a landscape photo under 500 KB. Leave blank to hide it." }
       - { name: photoAlt, label: Photo description, type: string, description: "Not shown on the page. Describes the wide photo for screen readers." }
@@ -96,7 +96,7 @@ content:
         description: "The cards with a colored left edge under Who Can Play."
         fields:
           - { name: title, label: Title, type: string, description: "The bold first line of the card." }
-          - { name: text, label: Text, type: text, description: "The details under the title." }
+          - { name: text, label: Text, type: text, description: "The details under the title. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - name: schedule
         label: Time commitment
         type: object
@@ -109,15 +109,15 @@ content:
             description: "The small icon at the top of the box."
             options: { values: [whistle, star, ball, football, pom, calendar, clock] }
           - { name: title, label: Title, type: string, description: "The bold title in the box." }
-          - { name: text, label: Text, type: text, description: "The details under the title." }
+          - { name: text, label: Text, type: text, description: "The details under the title. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - { name: price, label: Price, type: string, description: "The big price on the registration card. Numbers only, like 130." }
       - { name: priceNote, label: Price note, type: string, description: "The small text beside the big price (per player, sibling discount)." }
       - { name: lateFee, label: Late fee, type: string, description: "Numbers only, like 150. Shows a late registration line under the price. Leave blank to hide it." }
       - { name: registrationOpens, label: Registration opens, type: string, description: "Shown on the registration card, like December 23, 2026. If both registration dates are blank, the card says the dates are coming soon." }
       - { name: registrationCloses, label: Registration closes, type: string, description: "Shown on the registration card, like February 1, 2027." }
-      - { name: registrationNotes, label: Registration fine print, type: text, description: "The small text under the Register Now button on the registration card." }
+      - { name: registrationNotes, label: Registration fine print, type: text, description: "The small text under the Register Now button on the registration card. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - { name: kit, label: Player kit items, type: string, list: true, description: "Soccer only. The checklist in the Player Kit box under What's Included." }
-      - { name: bring, label: Player brings, type: text, description: "Soccer only. The You Bring line at the bottom of the Player Kit box." }
+      - { name: bring, label: Player brings, type: text, description: "Soccer only. The You Bring line at the bottom of the Player Kit box. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - name: kits
         label: Kits
         type: object
@@ -126,7 +126,7 @@ content:
         fields:
           - { name: title, label: Kit name, type: string, description: "The bold name at the top of the box." }
           - { name: items, label: Items, type: string, list: true, description: "The checklist in the box." }
-          - { name: bring, label: Player brings, type: text, description: "The You Bring line at the bottom of the box." }
+          - { name: bring, label: Player brings, type: text, description: "The You Bring line at the bottom of the box. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - name: dates
         label: Key dates
         type: object
@@ -136,7 +136,7 @@ content:
           - { name: label, label: What, type: string, description: "The bold line at the top of the card." }
           - { name: date, label: Date, type: string, description: "The colored date line, written how you want it to read (Saturday, March 20). Leave blank to show Date coming soon." }
           - { name: place, label: Location, type: string, description: "The line with the map pin. Leave blank to hide it." }
-          - { name: note, label: Note, type: text, description: "The small gray text at the bottom of the card. Leave blank to hide it." }
+          - { name: note, label: Note, type: text, description: "The small gray text at the bottom of the card. Leave blank to hide it. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - { name: datesNote, label: Note under key dates, type: string, description: "The small line with the circle icon under the key date cards." }
 
   # ---------------------------------------------------------------
@@ -156,7 +156,7 @@ content:
     fields:
       - { name: eyebrow, label: Small label, type: string, description: "The small all-caps line above the sizing heading." }
       - { name: heading, label: Heading, type: string, description: "The big heading for the sizing section." }
-      - { name: text, label: Intro, type: text, description: "The paragraph under the sizing heading." }
+      - { name: text, label: Intro, type: text, description: "The paragraph under the sizing heading. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - name: groups
         label: Sports
         type: object
@@ -201,7 +201,7 @@ content:
     fields:
       - { name: eyebrow, label: Small label, type: string, description: "The small all-caps line above the age group heading, in the blue section." }
       - { name: heading, label: Heading, type: string, description: "The big heading in the blue age group section." }
-      - { name: text, label: Intro, type: text, description: "The paragraph under the heading in the blue section." }
+      - { name: text, label: Intro, type: text, description: "The paragraph under the heading in the blue section. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - { name: fallYear, label: Fall year of the season, type: number, description: "Sets the whole age chart and the birthday finder. Use the fall year of the school year, so 2026 for Spring 2027 soccer. The chart and its title update themselves." }
       - { name: youngest, label: Youngest age group, type: number, description: "The first row of the age chart (4 means 4U)." }
       - { name: oldest, label: Oldest age group, type: number, description: "The last row of the age chart (19 means 19U)." }
@@ -215,7 +215,7 @@ content:
     fields:
       - { name: eyebrow, label: Small label, type: string, description: "The small purple all-caps line above the teams heading." }
       - { name: heading, label: Heading, type: string, description: "The big heading on the left of the teams section." }
-      - { name: text, label: Intro, type: text, description: "The paragraph under the heading on the left." }
+      - { name: text, label: Intro, type: text, description: "The paragraph under the heading on the left. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - name: questions
         label: Questions
         type: object
@@ -223,7 +223,7 @@ content:
         description: "The questions on the right that open when tapped."
         fields:
           - { name: question, label: Question, type: string, description: "The bold question people tap." }
-          - { name: answer, label: Answer, type: text, description: "The answer that shows when the question is opened." }
+          - { name: answer, label: Answer, type: text, description: "The answer that shows when the question is opened. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
 
   # ---------------------------------------------------------------
   - name: volunteer
@@ -234,7 +234,7 @@ content:
     fields:
       - { name: eyebrow, label: Small label, type: string, description: "The small green all-caps line above the volunteer heading." }
       - { name: heading, label: Heading, type: string, description: "The big heading for the volunteer section." }
-      - { name: text, label: Intro, type: text, description: "The paragraph under the volunteer heading." }
+      - { name: text, label: Intro, type: text, description: "The paragraph under the volunteer heading. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - name: roles
         label: Volunteer roles
         type: object
@@ -247,7 +247,7 @@ content:
             description: "The small icon in the colored square on the card."
             options: { values: [clipboard, whistle, megaphone, mower, mail, truck, people, star] }
           - { name: title, label: Title, type: string, description: "The bold title on the card." }
-          - { name: text, label: Text, type: text, description: "The paragraph on the card." }
+          - { name: text, label: Text, type: text, description: "The paragraph on the card. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - { name: quote, label: Quote, type: text, description: "The large quote in the navy box. Don't add quotation marks, the page adds them." }
       - { name: quoteBy, label: Quote by, type: string, description: "The name under the quote in the navy box." }
       - { name: trainingsHeading, label: Trainings heading, type: string, description: "The small all-caps line above the training cards." }
@@ -279,7 +279,7 @@ content:
       - { name: testimonialBy, label: Quote by, type: string, description: "The small line under the quote in the pink band." }
       - { name: eyebrow, label: Small label, type: string, description: "The small aqua all-caps line above the contact heading, in the navy section." }
       - { name: heading, label: Heading, type: string, description: "The big heading in the navy contact section." }
-      - { name: text, label: Intro, type: text, description: "The paragraph under the contact heading." }
+      - { name: text, label: Intro, type: text, description: "The paragraph under the contact heading. For italics, put one star (asterisk) on each side of the words. For bold, put two stars on each side." }
       - { name: email, label: Email, type: string, description: "The email button in the contact section and the email link in the footer." }
       - { name: phone, label: Text number, type: string, description: "The Text button in the contact section and the footer. Write it like (402) 819-8664." }
       - name: locations
