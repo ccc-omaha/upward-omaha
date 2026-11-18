@@ -2,8 +2,8 @@
   "eyebrow": "Fall 2027",
   "heading": "Upward Flag Football & Cheer",
   "intro": "Saturday mornings under the fall sky, with every player in the action and every cheerleader part of the full game-day experience.",
-  "logo": "images/football-logo.png",
-  "photo": "images/action-2.jpg",
+  "logo": "/images/football-logo.png",
+  "photo": "/images/action-2.jpg",
   "photoAlt": "Three Upward flag football players flexing with their backs to the camera, showing jerseys 13, 25, and 23",
   "photoCrop": "Upper third",
   "registerUrl": "https://registration.upward.org/UPW90431",
@@ -46,8 +46,6 @@
   ],
   "price": "130",
   "priceNote": "per player. Sibling discount available.",
-  "registrationOpens": "",
-  "registrationCloses": "",
   "lateFee": "150",
   "registrationNotes": "Registration is complete once full payment is received. Spots are limited and divisions may fill before the deadline.",
   "kits": [
@@ -77,37 +75,29 @@
   "dates": [
     {
       "label": "Registration deadline",
-      "date": "",
-      "place": "",
       "note": "Late fee applies after this date."
     },
     {
       "label": "Team placements sent",
-      "date": "",
-      "place": "",
       "note": "Team, coach, practice night, and season schedule arrive by text and email."
     },
     {
       "label": "First practices: flag football, 2nd to 12th grade",
-      "date": "",
       "place": "CCC Sports Fields",
-      "note": "Weather permitting. Watch for your team's night and time."
+      "note": "Weather permitting. Watch for your team’s night and time."
     },
     {
       "label": "First practice: flag football, kindergarten and 1st",
-      "date": "",
       "place": "CCC Sports Fields",
       "note": "Saturday morning, 9 to 10 AM."
     },
     {
       "label": "First practices: cheer",
-      "date": "",
       "place": "Christ Community Church",
       "note": "Times based on team."
     },
     {
       "label": "Outdoor games",
-      "date": "",
       "place": "CCC Sports Fields",
       "note": "Saturdays. No games on Labor Day weekend."
     }
