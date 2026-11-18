@@ -2,11 +2,35 @@
   "eyebrow": "Why Upward",
   "heading": "A league that puts kids first",
   "items": [
-    { "icon": "whistle", "title": "Everyone plays", "text": "Every soccer and flag football player is on the field for at least half of every game. Cheerleaders are part of the whole game day." },
-    { "icon": "tag", "title": "Affordable", "text": "One registration fee covers the season and the uniform kit, with a sibling discount for families." },
-    { "icon": "clock", "title": "Low commitment", "text": "One weeknight practice and one Saturday game a week. That's it." },
-    { "icon": "shield", "title": "Safe and supportive", "text": "Trained coaches, balanced teams, and a low-pressure environment where kids can try, fail, and try again." },
-    { "icon": "cross", "title": "Rooted in faith", "text": "Built on Christian principles, with coaches who model character on and off the field." },
-    { "icon": "star", "title": "Real growth", "text": "Kids build skills, confidence, teamwork, and friendships that last past the final whistle." }
+    {
+      "icon": "whistle",
+      "title": "Everyone plays",
+      "text": "Every soccer and flag football player is on the field for at least half of every game. Cheerleaders are part of the whole game day."
+    },
+    {
+      "icon": "tag",
+      "title": "Affordable",
+      "text": "One registration fee covers the season and the uniform kit, with a sibling discount for families."
+    },
+    {
+      "icon": "clock",
+      "title": "Low commitment",
+      "text": "One weeknight practice and one Saturday game a week. That’s it."
+    },
+    {
+      "icon": "shield",
+      "title": "Safe and supportive",
+      "text": "Trained coaches, balanced teams, and a low-pressure environment where kids can try, fail, and try again."
+    },
+    {
+      "icon": "cross",
+      "title": "Rooted in faith",
+      "text": "Built on Christian principles, with coaches who model character on and off the field."
+    },
+    {
+      "icon": "star",
+      "title": "Real growth",
+      "text": "Kids build skills, confidence, teamwork, and friendships that last past the final whistle."
+    }
   ]
 }
